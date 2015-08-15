@@ -1,0 +1,9 @@
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\bin\Debug\Zadanie01.exe.config
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.csprojResolveAssemblyReference.cache
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.Form1.resources
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.Properties.Resources.resources
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.csproj.GenerateResource.Cache
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\bin\Debug\Zadanie01.exe
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\bin\Debug\Zadanie01.pdb
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.exe
+D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.pdb
