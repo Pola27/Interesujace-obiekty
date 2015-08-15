@@ -1,0 +1,22 @@
+Zadanie 1
+
+Wymagania:
+Ściąga losowe 8 obrazków, z google, wyszukując podane hasło [jakies]
+Układa z nich kwadrat 4x4 obrazki, maja mieć 100px na 100px (można przyciąć lub przeskalować)
+Zasłania je
+Pierwsze klikniecie odsłania pierwszy
+Drugie kliknięcie odsłania drugi i albo pasują wtedy je usuwa, albo nie pasują i zasłania je ponownie.
+Jak znikną wszystkie to koniec gry (i można zacząć kolejną).
+Ściąganie ma obsłużyć fakt, ze obrazków przyszło za mało (okienko pop-up "za mało obrazków - zmień hasło")
+
+Widok aplikacji - formatka:
+Pole tekstowe na wpisanie hasła
+Przycisk "załaduj obrazki" (nie da się kliknąć gdy hasło puste)
+Miejsce na obrazki (może być z góry stworzone, może się okienko powiększać)
+Pole/labelka z punktami - trafienie 5, nie trafienie -2 (obsługuje ujemne)
+Licznik z czasem - start wraz z pierwszym kliknięciem, stop wraz z końcem.
+
+
+
+
+
