@@ -7,3 +7,12 @@ D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\bin\Debug\Zadanie01.exe
 D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\bin\Debug\Zadanie01.pdb
 D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.exe
 D:\praca\zadanie_2015_07_02_CorrFetch\Zadanie01\obj\Debug\Zadanie01.pdb
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\bin\Debug\Zadanie01.exe.config
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.exe
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.pdb
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\bin\Debug\Zadanie01.exe
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\bin\Debug\Zadanie01.pdb
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.csprojResolveAssemblyReference.cache
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.Form1.resources
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.Properties.Resources.resources
+d:\praca\zadanie_2015_07_29_cSharpSzkolenie\Interesujace-obiekty\Zadanie1\Grzesiek\obj\Debug\Zadanie01.csproj.GenerateResource.Cache
