@@ -1,0 +1,35 @@
+class Pictures
+Image[] getPictures();
+loadPictures();
+
+
+class  Game
+Image Pictures[];
+timer Timer; //ponoc jet od tego klasa specjlana
+int punkty;
+int[2*tyle co Picturesów] pictureNumber
+int previousPicture //zapamietuje poprzednio zanacozny/okdryty obrazek dla pictureSelect;
+
+pictureState pictureSelect(int index)
+  //odslania karty, psrwadza wynik, ocenia gre, steruje timerem
+private startTimer();
+private stopTimer();
+Image fetchImage(int index)(); //żeby From mogl obrazki wyciągnać
+
+
+
+enum pictureState
+1 - odslon
+2 - odslon i zakryj po n sekundach
+3 - odslon i usun po n sekundach
+4 ?
+
+
+
+
+
+pozostaje Form:
+- uklada obrazki adekwanie do ich ilosci
+- numeruje je tak samo jak Game
+
+
