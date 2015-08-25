@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Timers;
+
 
 namespace Zadanie01
 {
@@ -12,28 +14,32 @@ namespace Zadanie01
     {
 
         private bool show;
+        public int number;
 
-        public bool uncover {
-            get
-            {
-                return this.show;
-            }
-            
-            set
-            {
-                this.show = !this.show;
-                if (this.show)
-                {
-                    this.BackColor = Color.Brown;
-                    //    Size = new Size(100, 100);
-                }
-
-                if (!this.show)
-                {
-                    this.BackColor = Color.AliceBlue;
-                }
-            }
-        
+        public void select()
+        {
+           this.show = true;
+           this.BackColor = Color.Brown;
         }
+        public void unselect()
+        {
+           this.show = false;
+           this.BackColor = Color.AliceBlue;
+        }
+
+
+        public void hidePictureBox_onTimer(object sender, EventArgs e)
+        {
+            this.unselect();
+        }
+
+        public void removePictureBox_onTimer(object sender, EventArgs e)
+        {
+            this.unselect();
+            this.Visible = false;
+
+        }
+
+
     }
 }

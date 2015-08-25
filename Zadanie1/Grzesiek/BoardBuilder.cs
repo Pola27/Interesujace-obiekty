@@ -16,12 +16,15 @@ namespace Zadanie01
         {
 
             int i = 0;
-            foreach (Image image in game.getCardsImage())
+            while (i <  game.howManyPictures())
             {
                 PictureBoxExt pictureBox = new PictureBoxExt();
+                pictureBox.Name = "pb" + i.ToString();
                 pictureBox.Size = new Size(104, 104);
-                pictureBox.Image = image;
+                pictureBox.Image = game.fetchImage(i);
                 pictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+                pictureBox.number = i;
+                pictureBox.Visible = true;
                 pictureBox.Location = new Point(12+ ((i % 4) * 100 + (i % 4) * 10), 40 + (i / 4) * 100 + ((i/4) % 4 )* 10);
                 pictureBox.Click += new EventHandler(form.pictureClick);
                 pictureBox.DoubleClick += new EventHandler(form.pictureClick);
@@ -30,9 +33,12 @@ namespace Zadanie01
                 form.Controls.Add(pictureBox);
                 i++;
                 PictureBoxExt pictureBox1 = new PictureBoxExt();
+                pictureBox1.Name = "pb" + i.ToString();
                 pictureBox1.Size = new Size(104, 104);
-                pictureBox1.Image = image;
+                pictureBox1.Image = game.fetchImage(i);
                 pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+                pictureBox1.number = i;
+                pictureBox1.Visible = true;
                 pictureBox1.Location = new Point(12 + ((i % 4) * 100 + (i % 4) * 10), 40 + (i / 4) * 100 + ((i / 4) % 4) * 10);
                 pictureBox1.Click += new EventHandler(form.pictureClick);
                 pictureBox1.DoubleClick += new EventHandler(form.pictureClick);
@@ -40,6 +46,7 @@ namespace Zadanie01
                 pictureBox1.BackColor = Color.AliceBlue;
                 form.Controls.Add(pictureBox1);
                 i++;
+                Console.WriteLine(i.ToString());
             }
 
             /*
