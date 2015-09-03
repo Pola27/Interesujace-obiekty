@@ -17,7 +17,7 @@ namespace Zadanie01
         Game game;
         BoardBuilder bb;
         int previousPictureBox;
-
+        Timer mainTimer;
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Zadanie01
         {
 
             game = new Game();
-            
+            mainTimer = new Timer();
             bb = new BoardBuilder(this, game);
             this.button1.Enabled = false;
          
@@ -41,6 +41,7 @@ namespace Zadanie01
 
         public void pictureClick(object sender, EventArgs e)
         {
+            if (!mainTimer.Enabled) mainTimer.Start();
             PictureBoxExt pBox = sender as PictureBoxExt;
             if (pBox != null)
             {

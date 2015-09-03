@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardBuilder.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="enums.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
