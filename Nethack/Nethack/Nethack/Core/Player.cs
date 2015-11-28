@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Tuple;
 using System.Threading.Tasks;
 
 namespace Nethack.Core
