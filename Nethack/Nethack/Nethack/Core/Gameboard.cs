@@ -15,17 +15,17 @@ namespace Nethack.Core
     };
 
 
- public class Gameboard
+    public class Gameboard
     {
         public tilesState[,] board = new tilesState[50, 50];
 
-       
+
         public Gameboard(int zombieNumb, int playersNumb)
         {
-            generateBoard(zombieNumb, playersNumb);
+            generateBoard (zombieNumb,playersNumb);
         }
 
-        private void setBoard(int i, int j, tilesState k)
+        public void setBoard(int i, int j, tilesState k)
         {
             board[i, j] = k;
 
@@ -83,14 +83,14 @@ namespace Nethack.Core
 
         }
 
-        for (int i = 1; i < playersNumb; i++)
+        for (int i = 1; i < 5; i++)
         {
-            for (int j = 1; j < 5; j++)
+            for (int j = 1; j < playersNumb; j++)
             {
                 if (i == 1)
                 {
                     setBoard(i, j, tilesState.player);
-
+                 
                 }
                 else {
                     setBoard(i, j, tilesState.empty);}
@@ -101,13 +101,12 @@ namespace Nethack.Core
 
         }
 
+        public tilesState checkPos(int x, int y)
+        {
+            return board[x, y];
+        }
 
-
-
-     //TODO getBoard() ktora zwraca board
-
-    }
-
-
+       }
+     
     
 }
