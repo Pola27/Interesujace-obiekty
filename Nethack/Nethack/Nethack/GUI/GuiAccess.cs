@@ -40,6 +40,13 @@ namespace Nethack.GUI
             this.picture = picture;
             Rectangle srcRect;
 
+            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+            System.Drawing.Graphics formGraphics = Graphics.FromImage((Bitmap)originalBoard.Clone(new Rectangle(0, 0, originalBoard.Width, originalBoard.Height), originalBoard.PixelFormat));
+            formGraphics.FillRectangle(myBrush, new Rectangle(0, 0, originalBoard.Width, originalBoard.Height));
+            originalBoard = new Bitmap(originalBoard.Width, originalBoard.Height, formGraphics);
+            myBrush.Dispose();
+            formGraphics.Dispose();
+
             srcRect = new Rectangle(pointWall, new Size(32, 32));
             iconWall = (Bitmap)iconAtlas.Clone(srcRect, iconAtlas.PixelFormat);
 

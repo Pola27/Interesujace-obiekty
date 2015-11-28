@@ -17,3 +17,8 @@ D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.pdb
 d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.exe
 d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.pdb
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.csprojResolveAssemblyReference.cache
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.Properties.Resources.resources
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.csproj.GenerateResource.Cache
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\bin\Debug\Nethack.pdb
