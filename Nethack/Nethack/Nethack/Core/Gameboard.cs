@@ -15,7 +15,7 @@ namespace Nethack.Core
     };
 
 
-    public class Gameboard
+ public class Gameboard
     {
         public tilesState[,] board = new tilesState[50, 50];
 
@@ -103,7 +103,10 @@ namespace Nethack.Core
 
 
 
-       }
+
+     //TODO getBoard() ktora zwraca board
+
+    }
 
 
     
