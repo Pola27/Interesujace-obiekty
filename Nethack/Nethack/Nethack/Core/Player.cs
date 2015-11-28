@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nethack.Core
 {
-    class Player
+   public class Player
     {
     }
 }
