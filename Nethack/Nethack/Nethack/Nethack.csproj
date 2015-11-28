@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Constans.cs" />
     <Compile Include="Core\Master.cs" />
     <Compile Include="Core\enums.cs" />
     <Compile Include="Core\Game.cs" />

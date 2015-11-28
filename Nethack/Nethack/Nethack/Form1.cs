@@ -17,6 +17,9 @@ namespace Nethack
     {
         Master master;
         GuiAccess guiAccess;
+        public int sizeX = 25;
+        public int sizeY = 12;
+
         public Form1()
         {
             InitializeComponent();
@@ -79,8 +82,8 @@ namespace Nethack
 
         private void startGame_Click(object sender, EventArgs e)//let the hunger games begun
         {
-            master.startGame();
-            guiAccess.RenderBoard(master.newGame.gameBoard,master.playerCont);
+            master.startGame(sizeX, sizeY);
+            guiAccess.RenderBoard(master.newGame.gameBoard, master.playerCont);
            
         }
 

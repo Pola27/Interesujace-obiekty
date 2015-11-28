@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nethack.Core
 {
+
     public enum Directions
     {
         right,
@@ -39,5 +40,6 @@ namespace Nethack.Core
             y = p2;
         }
     }
+
 
 }

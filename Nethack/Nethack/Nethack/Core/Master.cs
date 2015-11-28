@@ -51,9 +51,9 @@ namespace Nethack.Core
         }
         //nasluch na innych graczy
 
-        public void startGame()
+        public void startGame(int sizeX, int sizeY)
         {
-            newGame = new Game(playerCont, 20, 20, zombieNum, playersNum);
+            newGame = new Game(playerCont, sizeX, sizeY, zombieNum, playersNum);
            
             
            // GuiAccess.RenderB

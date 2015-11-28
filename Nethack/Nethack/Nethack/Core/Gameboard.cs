@@ -32,7 +32,7 @@ namespace Nethack.Core
         private void generateBoard(int zombieNumb, int playersNumb)
     {
         Random rnd = new Random();
-        int obstacleNumb = rnd.Next(10, 80);
+        int obstacleNumb = rnd.Next(10, 50);
         int piecesNumb = (board.GetLength(0) - 2) * (board.GetLength(1) - 2);
 
         for (int i = 0; i < board.GetLength(0); i++)
