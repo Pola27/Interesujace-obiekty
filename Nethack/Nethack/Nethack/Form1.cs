@@ -34,6 +34,7 @@ namespace Nethack
         //    guiAccess.RenderBoard(gameboard, player);
             //game.connect(this);
 
+           this.richTextBox1.Enabled = false;
         }
 
 
@@ -89,6 +90,7 @@ namespace Nethack
 
         void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             switch (e.KeyChar)
             {
                 case (char)49:
@@ -101,10 +103,13 @@ namespace Nethack
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
 
     }
 }
