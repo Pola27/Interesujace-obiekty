@@ -8,7 +8,7 @@ namespace Nethack.Core
 {
     class Game
     {
-        public List<Player> playerContainer = new List<Player>();
+        public List<Player> playerContainer;
         public Gameboard gameBoard;
        // int k;
 
@@ -16,6 +16,7 @@ namespace Nethack.Core
         {
             playerContainer = playerCont;
             gameBoard = new Gameboard(sizeX, sizeY, zombieNumb, playersNum);
+
         }
         public void positionUpdate(Position currentPosition, int k)
         {

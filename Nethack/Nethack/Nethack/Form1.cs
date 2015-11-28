@@ -49,7 +49,9 @@ namespace Nethack
 
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Directions directions = Directions.down;
+            master.newGame.movePlayer(GetLocalIPAddress(), directions);
+            guiAccess.RenderBoard(master.newGame.gameBoard, master.playerCont);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +101,9 @@ namespace Nethack
                     e.Handled = true;
                     break;
             }
+            Directions directions = Directions.down;
+            master.newGame.movePlayer(GetLocalIPAddress(), directions);
+            guiAccess.RenderBoard(master.newGame.gameBoard, master.playerCont);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
