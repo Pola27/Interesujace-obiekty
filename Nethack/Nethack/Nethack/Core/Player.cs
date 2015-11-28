@@ -6,26 +6,9 @@ using System.Threading.Tasks;
 
 namespace Nethack.Core
 {
-    public enum playerType
-    {
+ 
 
-        player = 1,
-        zombie = 3,
-
-    };
-
-    public struct Position
-    {
-        public int x, y;
-
-        public Position(int p1, int p2)
-        {
-            x = p1;
-            y = p2;
-        }
-    }
-
-    public class Player
+     public class Player
     {
         private int hP = 100;
         private string name;

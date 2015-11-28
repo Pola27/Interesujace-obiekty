@@ -15,3 +15,4 @@ D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\obj\Debug\Nethack.Properties
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\obj\Debug\Nethack.csproj.GenerateResource.Cache
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.pdb
+D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\obj\Debug\Nethack.Form1.resources

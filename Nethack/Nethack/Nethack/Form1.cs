@@ -15,16 +15,20 @@ namespace Nethack
 {
     public partial class Form1 : Form
     {
+        Master master;
+        GuiAccess guiAccess;
         public Form1()
         {
             InitializeComponent();
 
-            Game game = new Game();
-            Player player = new Player();
-            GuiAccess guiAccess = new GuiAccess(this.pictureBox1);
-            Gameboard gameboard = new Gameboard(1,2);
+            //
+           
+           // Game game = new Game();
+          //  Player player = new Player();
+        GuiAccess guiAccess = new GuiAccess(this.pictureBox1);
+         //   Gameboard gameboard = new Gameboard(1, 2);
 
-            guiAccess.RenderBoard(gameboard, player);
+        //    guiAccess.RenderBoard(gameboard, player);
             //game.connect(this);
 
         }
@@ -51,6 +55,32 @@ namespace Nethack
             Application.Exit();
         }
 
+        public static string GetLocalIPAddress()
+        {
+            var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
+
+        private void putServer_Click(object sender, EventArgs e)//start new game and wait for others
+        {
+            master = new Master(GetLocalIPAddress(), "JA");
+            //pokazać okno z oczekiwaniem na graczy i opcja start
+        }
+
+
+        private void startGame_Click(object sender, EventArgs e)//let the hunger games begun
+        {
+            master.startGame();
+            guiAccess.RenderBoard(master.newGame.gameBoard,master.playerCont);
+           
+        }
 
         void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -64,6 +94,11 @@ namespace Nethack
                     e.Handled = true;
                     break;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

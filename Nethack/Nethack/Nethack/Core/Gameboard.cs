@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 
 namespace Nethack.Core
 {
-    public enum tilesState
-    {
-        empty = 0,
-        player = 1,
-        zombie = 3,
-        obstacle = 4
-    };
-
+  
 
     public class Gameboard
     {
-        public tilesState[,] board = new tilesState[50, 50];
+        public tilesState[,] board;
 
 
-        public Gameboard(int zombieNumb, int playersNumb)
+        public Gameboard(int sizeX, int sizeY,int zombieNumb, int playersNumb)
         {
+            board = new tilesState[sizeX, sizeY];
             generateBoard (zombieNumb,playersNumb);
         }
 
@@ -39,10 +33,10 @@ namespace Nethack.Core
     {
         Random rnd = new Random();
         int obstacleNumb = rnd.Next(1, 500);
-        int piecesNumb = 48*48;
-        for (int i = 1; i < 49; i++)
+        int piecesNumb = (board.GetLength(0) - 2) * (board.GetLength(1) - 2);
+        for (int i = 1; i < board.GetLength(0) - 1; i++)
         {
-            for (int j = 1; j < 49; j++)
+            for (int j = 1; j < board.GetLength(1)-1; j++)
             {
                 int numb1 = rnd.Next(1, piecesNumb);
                 if (numb1 <= zombieNumb)
@@ -74,14 +68,24 @@ namespace Nethack.Core
 
         }
 
-        for (int i=0;i<50;i++)
+        for (int i = 0; i < board.GetLength(0); i++)
         {
-            setBoard(0, i, tilesState.obstacle);
+           
             setBoard(i, 0, tilesState.obstacle);
-            setBoard(49, i,tilesState.obstacle);
-            setBoard(i, 49, tilesState.obstacle);
+            
+            setBoard(i, board.GetLength(1)-1, tilesState.obstacle);
 
         }
+
+        for (int i = 0; i < board.GetLength(1); i++)
+        {
+            setBoard(0, i, tilesState.obstacle);
+          
+            setBoard(board.GetLength(0) - 1, i, tilesState.obstacle);
+          
+
+        }
+
 
         for (int i = 1; i < 5; i++)
         {

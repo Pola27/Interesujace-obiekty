@@ -10,19 +10,19 @@ namespace Nethack.Core
     {
         public List<Player> playerContainer = new List<Player>();
         public Gameboard gameBoard;
-        int k;
-        public enum Directions
-        {
-            right,
-            left,
-            up,
-            down
-        };
+       // int k;
 
+        public Game(List<Player> playerCont, int sizeX, int sizeY,int zombieNumb)
+        {
+            playerContainer = playerCont;
+            gameBoard = new Gameboard(sizeX, sizeY, zombieNumb, playerCont.Count - zombieNumb);
+        }
         public void positionUpdate(Position currentPosition, int k)
         {
             playerContainer[k].Post = currentPosition;
         }
+
+
         private void setPlayerPos()
         {
             int sizeOfPlayerC = playerContainer.Count;
@@ -39,6 +39,7 @@ namespace Nethack.Core
             Position newPos = new Position(k, j);
             positionUpdate(newPos, iD);
             gameBoard.setBoard(playerContainer[iD].Post.x, playerContainer[iD].Post.y, tilesState.player);
+            //updatePosInNetwork
 
         }
 
