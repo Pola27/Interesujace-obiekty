@@ -19,7 +19,7 @@ namespace Nethack.Core
     {
         public tilesState[,] board = new tilesState[50, 50];
 
-
+       
         public Gameboard(int zombieNumb, int playersNumb)
         {
             generateBoard(zombieNumb, playersNumb);
