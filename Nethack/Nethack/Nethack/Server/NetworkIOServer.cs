@@ -13,24 +13,24 @@ namespace Nethack.Server
 {
     public class NetworkIOServer
     {
-        public static void Main()
-        {
+        //public static void Main()
+        //{
 
-            Thread Serverrr = new Thread(() =>
-            {
-                NetworkIOServer serv = new NetworkIOServer();
-                serv.Run();
-            });
+        //    Thread Serverrr = new Thread(() =>
+        //    {
+        //        NetworkIOServer serv = new NetworkIOServer();
+        //        serv.Run();
+        //    });
 
-            Thread Clienttt = new Thread(() =>
-            {
-                NetworkIOServer cli = new NetworkIOServer();
-                cli.Client();
-            });
+        //    Thread Clienttt = new Thread(() =>
+        //    {
+        //        NetworkIOServer cli = new NetworkIOServer();
+        //        cli.Client();
+        //    });
 
-            Serverrr.Start();
-            Clienttt.Start();
-        }
+        //    Serverrr.Start();
+        //    Clienttt.Start();
+        //}
 
 
         private void Run()
