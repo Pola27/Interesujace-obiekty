@@ -25,7 +25,7 @@ namespace Nethack
            
            // Game game = new Game();
           //  Player player = new Player();
-        GuiAccess guiAccess = new GuiAccess(this.pictureBox1);
+         guiAccess = new GuiAccess(this.pictureBox1);
          //   Gameboard gameboard = new Gameboard(1, 2);
 
         //    guiAccess.RenderBoard(gameboard, player);
@@ -40,6 +40,8 @@ namespace Nethack
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //game
+            putServer_Click(sender, e);
+            startGame_Click(sender, e);
         }
 
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
