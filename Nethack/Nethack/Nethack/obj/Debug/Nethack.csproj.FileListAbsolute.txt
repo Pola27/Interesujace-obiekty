@@ -1,3 +1,7 @@
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe.config
 d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe.config
 D:\Ola\C#\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe.config
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.csprojResolveAssemblyReference.cache
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.Form1.resources
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.Properties.Resources.resources
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\obj\Debug\Nethack.csproj.GenerateResource.Cache
