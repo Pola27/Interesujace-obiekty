@@ -50,9 +50,7 @@ namespace Nethack
 
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Directions directions = Directions.down;
-            master.newGame.movePlayer(GetLocalIPAddress(), directions);
-            guiAccess.RenderBoard(master.newGame.gameBoard, master.playerCont);
+           
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,19 +90,24 @@ namespace Nethack
 
         void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            Directions directions;
             switch (e.KeyChar)
             {
-                case (char)49:
-                case (char)52:
+                case 'a': { master.newGame.movePlayer(GetLocalIPAddress(), Directions.left); e.Handled = true; break; }
+                case 'w': { master.newGame.movePlayer(GetLocalIPAddress(),  Directions.up); e.Handled = true; break; }
+                case 's': { master.newGame.movePlayer(GetLocalIPAddress(), Directions.down); e.Handled = true; break; }
+                case 'd': { master.newGame.movePlayer(GetLocalIPAddress(),  Directions.right); e.Handled = true; break; }
+                default:
+               /* case (char)52:
                 case (char)55:
                     MessageBox.Show("Form.KeyPress: '" +
-                        e.KeyChar.ToString() + "' consumed.");
+                        e.KeyChar.ToString() + "' consumed.");*/
                     e.Handled = true;
                     break;
+                                      
             }
-            Directions directions = Directions.down;
-            master.newGame.movePlayer(GetLocalIPAddress(), directions);
+            
+            
             guiAccess.RenderBoard(master.newGame.gameBoard, master.playerCont);
         }
 

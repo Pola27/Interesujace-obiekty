@@ -11,6 +11,8 @@ namespace Nethack.Core
         public List<Player> playerContainer;
         public Gameboard gameBoard;
        // int k;
+       public delegate void Del(Position p, int id);
+         public event Del DelegatedPos;
 
         public Game(List<Player> playerCont, int sizeX, int sizeY,int zombieNumb,int playersNum)
         {
@@ -21,8 +23,12 @@ namespace Nethack.Core
         public void positionUpdate(Position currentPosition, int k)
         {
             playerContainer[k].Post = currentPosition;
+          //  Del handler += DelegatedPos;
+            DelegatedPos(currentPosition, k); 
+
         }
 
+     
 
         private void setPlayerPos()
         {

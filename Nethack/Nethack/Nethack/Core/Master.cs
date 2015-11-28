@@ -18,6 +18,9 @@ namespace Nethack.Core
         public Game newGame;
         public List<Player> playerCont = new List<Player>();
 
+        public delegate void Del(int id, Position p);
+
+
         int zombieNum;
         int playersNum = 1;
         
@@ -29,7 +32,7 @@ namespace Nethack.Core
             newplayer.Post =new  Position(1, 1);
             newplayer.Type = playerType.player;
             playerCont.Add(newplayer);
-            zombieNum = 2;
+            zombieNum = 12;
 
 
             for (int i = 1; i < zombieNum+1; i++)
@@ -51,15 +54,21 @@ namespace Nethack.Core
             newplayer.Post = new Position(1, playersNum + 1);
             playerCont.Add(newplayer);
             playersNum++;
-        }
+        
+}
         //nasluch na innych graczy
 
         public void startGame(int sizeX, int sizeY)
         {
             newGame = new Game(playerCont, sizeX, sizeY, zombieNum, playersNum);
-           
+            newGame.DelegatedPos += DelegatedPos;
             
            // GuiAccess.RenderB
+        }
+
+        public void DelegatedPos(Position p, int id)
+        {
+            playerCont[id].Post = p;
         }
 
     }
