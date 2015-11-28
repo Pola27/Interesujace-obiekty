@@ -21,7 +21,7 @@ namespace Nethack
 
             Game game = new Game();
             GuiAccess guiAccess = new GuiAccess();
-            game.connect(this);
+            //game.connect(this);
 
         }
 
@@ -31,7 +31,7 @@ namespace Nethack
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            game
+            //game
         }
     }
 }
