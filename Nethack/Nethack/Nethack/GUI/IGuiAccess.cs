@@ -9,7 +9,7 @@ namespace Nethack.GUI
 {
     public interface IGuiAccess
     {
-        void RenderBoard(Gameboard board, Player player);
+        void RenderBoard(Gameboard board, List<Player> player);
 
     }
 }

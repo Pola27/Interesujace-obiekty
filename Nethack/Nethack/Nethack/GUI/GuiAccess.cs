@@ -72,15 +72,15 @@ namespace Nethack.GUI
             return largeBmp;
         }
 
-        public void RenderBoard(Gameboard board, Player player)
+        public void RenderBoard(Gameboard board, List<Player> players)
             // na przykald
         {
             Rectangle srcRect;
             Bitmap icon;
         //picture.Image = icon;
         //Bitmap = Graphics.Draw
-            for (int x=0; x < 50; x++)
-                for (int y=0; y < 50; y++)
+            for (int x=0; x < 20; x++)
+                for (int y=0; y < 20; y++)
                 {
                     switch (board.getBoard()[x,y])
                     {
