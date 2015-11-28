@@ -18,5 +18,8 @@ namespace Nethack.Core
     {
     tilesState  [,] board = new tilesState [50,50];
 
+
+     //TODO getBoard() ktora zwraca board
+
     }
 }

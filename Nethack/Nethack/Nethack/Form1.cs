@@ -20,7 +20,7 @@ namespace Nethack
             InitializeComponent();
 
             Game game = new Game();
-            GuiAccess guiAccess = new GuiAccess();
+            GuiAccess guiAccess = new GuiAccess(this.pictureBox1);
             //game.connect(this);
 
         }
@@ -32,6 +32,19 @@ namespace Nethack
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //game
+        }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //TODO Server::drop players
+            //TODO Server::disconnect server
+            //turn off game
+            Application.Exit();
         }
     }
 }
