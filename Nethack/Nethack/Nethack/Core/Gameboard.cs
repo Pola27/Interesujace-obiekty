@@ -32,8 +32,26 @@ namespace Nethack.Core
         private void generateBoard(int zombieNumb, int playersNumb)
     {
         Random rnd = new Random();
-        int obstacleNumb = rnd.Next(1, 500);
+        int obstacleNumb = rnd.Next(10, 80);
         int piecesNumb = (board.GetLength(0) - 2) * (board.GetLength(1) - 2);
+
+        for (int i = 0; i < board.GetLength(0); i++)
+        {
+
+            setBoard(i, 0, tilesState.obstacle);
+
+            setBoard(i, board.GetLength(1) - 1, tilesState.obstacle);
+
+        }
+
+        for (int i = 0; i < board.GetLength(1); i++)
+        {
+            setBoard(0, i, tilesState.obstacle);
+
+            setBoard(board.GetLength(0) - 1, i, tilesState.obstacle);
+
+
+        }    
         for (int i = 1; i < board.GetLength(0) - 1; i++)
         {
             for (int j = 1; j < board.GetLength(1)-1; j++)
@@ -52,8 +70,6 @@ namespace Nethack.Core
                     {
                         setBoard(i, j,tilesState.empty);
 
-
-
                     }
                     else
                     {
@@ -68,28 +84,12 @@ namespace Nethack.Core
 
         }
 
-        for (int i = 0; i < board.GetLength(0); i++)
-        {
-           
-            setBoard(i, 0, tilesState.obstacle);
-            
-            setBoard(i, board.GetLength(1)-1, tilesState.obstacle);
-
-        }
-
-        for (int i = 0; i < board.GetLength(1); i++)
-        {
-            setBoard(0, i, tilesState.obstacle);
-          
-            setBoard(board.GetLength(0) - 1, i, tilesState.obstacle);
-          
-
-        }
+       
 
 
         for (int i = 1; i < 5; i++)
         {
-            for (int j = 1; j < playersNumb; j++)
+            for (int j = 1; j <= playersNumb; j++)
             {
                 if (i == 1)
                 {

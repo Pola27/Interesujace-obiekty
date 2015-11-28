@@ -12,10 +12,10 @@ namespace Nethack.Core
         public Gameboard gameBoard;
        // int k;
 
-        public Game(List<Player> playerCont, int sizeX, int sizeY,int zombieNumb)
+        public Game(List<Player> playerCont, int sizeX, int sizeY,int zombieNumb,int playersNum)
         {
             playerContainer = playerCont;
-            gameBoard = new Gameboard(sizeX, sizeY, zombieNumb, playerCont.Count - zombieNumb);
+            gameBoard = new Gameboard(sizeX, sizeY, zombieNumb, playersNum);
         }
         public void positionUpdate(Position currentPosition, int k)
         {

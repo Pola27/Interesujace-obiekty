@@ -53,7 +53,7 @@ namespace Nethack.Core
 
         public void startGame()
         {
-            newGame = new Game(playerCont,20,20,zombieNum);
+            newGame = new Game(playerCont, 20, 20, zombieNum, playersNum);
            
             
            // GuiAccess.RenderB
