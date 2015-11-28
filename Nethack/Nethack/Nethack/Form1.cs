@@ -43,7 +43,7 @@ namespace Nethack
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //game
+            //gameS
             putServer_Click(sender, e);
             startGame_Click(sender, e);
         }
