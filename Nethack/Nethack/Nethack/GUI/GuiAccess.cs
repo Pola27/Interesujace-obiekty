@@ -36,7 +36,7 @@ namespace Nethack.GUI
                     {
                         case tilesState.empty: 
                             {
-                                picture.Paint(
+                                //picture.Paint(
                                 break;
                             }
                         case tilesState.obstacle:
