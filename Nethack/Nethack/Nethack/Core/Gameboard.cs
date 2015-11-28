@@ -16,7 +16,7 @@ namespace Nethack.Core
 
  public    class Gameboard
     {
-     int [,] board = new int [50,50];
+    tilesState  [,] board = new tilesState [50,50];
 
     }
 }
