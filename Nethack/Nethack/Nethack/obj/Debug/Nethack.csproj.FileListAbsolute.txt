@@ -1,1 +1,2 @@
 D:\Git\Interesujace-obiekty\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe.config
+d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\bin\Debug\Nethack.exe.config
