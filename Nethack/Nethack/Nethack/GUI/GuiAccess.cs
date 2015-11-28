@@ -14,7 +14,8 @@ namespace Nethack.GUI
     public class GuiAccess : IGuiAccess
     {
         PictureBox picture;
-        Bitmap iconAtlas = new Bitmap(@"d:\NOGR\csharp\Nethack\Nethack\Nethack\Nethack\data\absurd32_nethack.png");
+        Bitmap iconAtlas = new Bitmap(global::Nethack.Properties.Resources.absurd32_nethack);
+        //this.pictureBox1.BackgroundImage = global::Nethack.Properties.Resources.absurd32_nethack;
         Bitmap originalBoard = new Bitmap(50 * 32, 50 * 32);
         
         Bitmap iconWall = new Bitmap(32,32);
