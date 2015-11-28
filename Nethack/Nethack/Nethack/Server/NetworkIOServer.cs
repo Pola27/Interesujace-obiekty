@@ -13,36 +13,13 @@ namespace Nethack.Server
 {
     public class NetworkIOServer
     {
-        //public static void Main()
-        //{
+        string localIP = "?";
 
-        //    Thread Serverrr = new Thread(() =>
-        //    {
-        //        NetworkIOServer serv = new NetworkIOServer();
-        //        serv.Run();
-        //    });
-
-        //    Thread Clienttt = new Thread(() =>
-        //    {
-        //        NetworkIOServer cli = new NetworkIOServer();
-        //        cli.Client();
-        //    });
-
-        //    Serverrr.Start();
-        //    // Clienttt.Start();
-
-        //}
-
-
-        private void Run()
+        public NetworkIOServer()
         {
-            TcpListener tcpListener = null;
-
-            //Tworzymy nowy obiekt TcpListener i rozpoczyna
-            //oczekiwanie ne sygnał na porcie 65000
-
+            
             IPHostEntry host;
-            string localIP = "?";
+            //string localIP = "?";
             host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (IPAddress ip in host.AddressList)
             {
@@ -51,11 +28,45 @@ namespace Nethack.Server
                     localIP = ip.ToString();
                 }
             }
+        }
+        
+
+        public static void Main()
+        {
+
+
+            Thread Serverrr = new Thread(() =>
+            {
+                NetworkIOServer serv = new NetworkIOServer();
+                serv.Run();
+            });
+
+            Thread Clienttt = new Thread(() =>
+            {
+                NetworkIOServer cli = new NetworkIOServer();
+                cli.Client();
+            });
+
+            Serverrr.Start();
+            Clienttt.Start();
+
+        }
+
+               
+        private void Run()
+        {
+            Console.Title = "Server";
+            TcpListener tcpListener = null;
+
+            //Tworzymy nowy obiekt TcpListener i rozpoczyna
+            //oczekiwanie ne sygnał na porcie 65000
+
+            
             Console.WriteLine("IP Twojego komputer: " + localIP);
 
             IPAddress localAddr = IPAddress.Parse(localIP);
             tcpListener = new TcpListener(localAddr, 13000);
-
+ 
             tcpListener.Start();
 
 
@@ -66,19 +77,19 @@ namespace Nethack.Server
                 //nowe gniazdo o nazwie socketForClient, a obiekt TcpLitener
                 //kontynuuje oczekiwanie na sygnał
 
-                Socket socketForClient = tcpListener.AcceptSocket();
-                Console.WriteLine("Jesteś w grze :)");
+                    Socket socketForClient = tcpListener.AcceptSocket();
+                    Console.WriteLine("Klient> podłaczył się..");
 
-                //Wysyłanie pliku
-                SendFileToClient(socketForClient);
+                    //Wysyłanie pliku
+                    SendFileToClient(socketForClient);
 
-                Console.WriteLine("Zerwanie połączenia");
+                    Console.WriteLine("Zerwanie połączenia");
 
-                //Zakończenie połączenia
-                socketForClient.Close();
-                Console.WriteLine("Koniec...");
-                Console.ReadKey();
-                break;
+                    //Zakończenie połączenia
+                    socketForClient.Close();
+                    Console.WriteLine("Koniec...");
+                    Console.ReadKey();
+                    break;
 
 
             }
@@ -93,7 +104,7 @@ namespace Nethack.Server
             StreamWriter streamWriter = new StreamWriter(networkStream);
 
             //Tworzymy StreamReader dla pliku
-            StreamReader streamReader = new StreamReader(@"D:\Ola\C#\Interesujace-obiekty\Nethack\SerwerWysylaPlik.txt");
+           // StreamReader streamReader = new StreamReader(@"D:\Ola\C#\Interesujace-obiekty\Nethack\SerwerWysylaPlik.txt");
 
             string theString;
 
@@ -101,19 +112,19 @@ namespace Nethack.Server
 
             do
             {
-                theString = streamReader.ReadLine();
+                theString = Console.ReadLine();
 
                 if (theString != null)
                 {
-                    Console.WriteLine("Wysyłanie : {0}", theString);
+                   // Console.WriteLine("Wysyłanie : {0}", theString);
                     streamWriter.WriteLine(theString);
                     streamWriter.Flush();
                 }
             }
-            while (theString != null);
+            while (theString != "");
 
             //Operacje porzadkujące
-            streamReader.Close();
+            //streamReader.Close();
             networkStream.Close();
             streamWriter.Close();
         }
@@ -121,30 +132,35 @@ namespace Nethack.Server
         //Client
         public void Client()
         {
-
-            // Pobranie nazwe serwera
-            Console.Write("Podaj nazwe serwera dla clienta: ");
-            String strServer = Console.ReadLine();
-
-            // Pobranie numeru portu zdalnego
-            Console.Write("Podaj numer portu zdalnego dla clienta: ");
-            String strPort = Console.ReadLine();
-
-
-
+            Console.Title = "Client";
+            String strServer = "";
             // Tworzenie obiektu TcpCliect do komunikacji z serwerem
-            TcpClient socketForServer;
-
-            try
+            TcpClient socketForServer = null;
+            Ping ping = new Ping();
+            while (socketForServer == null)
             {
-                socketForServer = new TcpClient(strServer, Int32.Parse(strPort));
+                for (int i = 2; i < 256; i++)
+                {
+                    if (socketForServer != null)
+                        break;
+                    try
+                    {
+                        strServer = "192.168.1." + i.ToString();
+                        if (strServer == localIP) continue;
+                        PingReply pingresult = ping.Send(strServer, 100);
+                        if (pingresult.Status.ToString() == "Success")
+                        {
+                            Console.WriteLine("Serwer> Połączenie z adresem {0}:13000....", strServer);
+                            socketForServer = new TcpClient(strServer, 13000);
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Serwer> Połączenie nieudane.", strServer);
+                    }
+                }
             }
-            catch
-            {
-                Console.WriteLine("Nieudane połączenie z adresem {0}:13000", strServer);
-                return;
-            }
-
+            Console.WriteLine("Serwer> Połączenie udane.", strServer);
             //Tworzy się NetworkStream i StreamReader
             NetworkStream networkStream = socketForServer.GetStream();
             StreamReader streamReader = new StreamReader(networkStream);
@@ -170,7 +186,9 @@ namespace Nethack.Server
             {
                 Console.WriteLine("Nie udało się");
             }
+
             networkStream.Close();
+
         }
     }
 }
