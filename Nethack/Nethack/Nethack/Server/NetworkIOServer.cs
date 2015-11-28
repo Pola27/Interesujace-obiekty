@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using System.Threading;
+using System.Threading;
 //using System.Threading.Tasks;
 using System.IO;
 using System.Net;
@@ -13,17 +13,37 @@ namespace Nethack.Server
 {
     public class NetworkIOServer
     {
-        public static void Main(){
-            NetworkIOServer app = new NetworkIOServer();
-            app.Run();
+        public static void Main()
+        {
+
+            Thread Serverrr = new Thread(() =>
+            {
+                NetworkIOServer serv = new NetworkIOServer();
+                serv.Run();
+            });
+
+            Thread Clienttt = new Thread(() =>
+            {
+                NetworkIOServer cli = new NetworkIOServer();
+                cli.Client();
+            });
+
+            Serverrr.Start();
+            Clienttt.Start();
         }
-        private void Run(){
+
+
+        private void Run()
+        {
+            TcpListener tcpListener = null;
             //Tworzymy nowy obiekt TcpListener i rozpoczyna
             //oczekiwanie ne sygnał na porcie 65000
-
+            Console.WriteLine("go");
             IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-            TcpListener tcpListener = new TcpListener(localAddr, 65000);
+            tcpListener = new TcpListener(localAddr, 13000);
+            //tcpListener.Stop();
             tcpListener.Start();
+
 
             //Oczekuje na sygnał do czasu przesłania plikiu
             for (; ; )
@@ -43,7 +63,10 @@ namespace Nethack.Server
                 //Zakończenie połączenia
                 socketForClient.Close();
                 Console.WriteLine("Koniec...");
+                Console.ReadKey();
                 break;
+
+
             }
         }
 
@@ -79,6 +102,50 @@ namespace Nethack.Server
             streamReader.Close();
             networkStream.Close();
             streamWriter.Close();
+        }
+
+        //Client
+        public void Client()
+        {
+            // Tworzenie obiektu TcpCliect do komunikacji z serwerem
+            TcpClient socketForServer;
+
+            try
+            {
+                socketForServer = new TcpClient("localhost", 13000);
+            }
+            catch
+            {
+                Console.WriteLine("Nieudane połączenie z adresem {0}:13000", "localhost");
+                return;
+            }
+
+            //Tworzy się NetworkStream i StreamReader
+            NetworkStream networkStream = socketForServer.GetStream();
+            StreamReader streamReader = new StreamReader(networkStream);
+
+            try
+            {
+                string OutPutString;
+
+                //Odczytywanie dane z serwera i wyświetlanie
+
+                do
+                {
+                    OutPutString = streamReader.ReadLine();
+
+                    if (OutPutString != null)
+                    {
+                        Console.WriteLine(OutPutString);
+                    }
+                }
+                while (OutPutString != null);
+            }
+            catch
+            {
+                Console.WriteLine("Nie udało się");
+            }
+            networkStream.Close();
         }
     }
 }

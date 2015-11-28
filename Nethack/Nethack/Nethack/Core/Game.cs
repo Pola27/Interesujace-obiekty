@@ -49,7 +49,7 @@ namespace Nethack.Core
                 if (playerContainer[i].IP == currentIP)
                 {
                     Position tempPos = playerContainer[i].Post;
-
+     
                     switch (currentDirection)
                     {
                         case Directions.left:
