@@ -15,6 +15,7 @@ namespace Nethack.Core
         private string ip;
         private playerType type;
         private Position position;
+         //item, FOV, kontener item, mana, exp
 
         public int HP
         {
@@ -46,5 +47,7 @@ namespace Nethack.Core
             set { position = value; }
         }
 
+
+         //set lub update
     }
 }

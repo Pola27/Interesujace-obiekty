@@ -44,12 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BoardContainer.cs" />
     <Compile Include="Core\Constans.cs" />
+    <Compile Include="Core\Dummy.cs" />
+    <Compile Include="Core\IInteractions.cs" />
     <Compile Include="Core\Master.cs" />
     <Compile Include="Core\enums.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\Gameboard.cs" />
     <Compile Include="Core\Player.cs" />
+    <Compile Include="Core\PlayersContainer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
