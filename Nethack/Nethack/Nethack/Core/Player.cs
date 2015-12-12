@@ -15,7 +15,7 @@ namespace Nethack.Core
         private string ip;
         private playerType type;
         private Position position;
-        public ItemContainer itemContainer;// chyba nie powinien byc publiczny, ale nie mam pomysłu na jego metody,
+        public ItemContainer itemsContainer;// chyba nie powinien byc publiczny, ale nie mam pomysłu na jego metody,
                                            // get/set chyba nie wystarczy, a dublowanie tych z klasy nie ma sensu
          //item, FOV, kontener item, mana, exp
 
