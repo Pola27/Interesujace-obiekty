@@ -14,6 +14,15 @@ namespace Nethack.Core
         up,
         down
     };
+   
+    public enum itemNames // Item -Int ID- chyba lepiej enuma
+    {
+        sword=0,
+        totch=1,
+        mannaPition=2,
+        healthPotion=3
+    }
+    
 
     public enum playerType
     {
@@ -27,7 +36,21 @@ namespace Nethack.Core
         empty = 0,
         player = 1,
         zombie = 3,
-        obstacle = 4
+        obstacle = 4,
+        door = 2,
+        sairsUp = 5,
+        stairsDown = 6,
+        wallDamaged = 7,
+        wallWood = 8,
+        wallStone = 9,
+        portal = 10,
+        plains = 11,
+        riverNS = 12,
+        riverEW = 13,
+        forest = 14,
+        pathNS = 15,
+        pathEW = 16
+        
     };
 
     public struct Position

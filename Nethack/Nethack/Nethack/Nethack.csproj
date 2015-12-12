@@ -48,6 +48,7 @@
     <Compile Include="Core\Constans.cs" />
     <Compile Include="Core\Dummy.cs" />
     <Compile Include="Core\IInteractions.cs" />
+    <Compile Include="Core\Items.cs" />
     <Compile Include="Core\Master.cs" />
     <Compile Include="Core\enums.cs" />
     <Compile Include="Core\Game.cs" />
@@ -62,6 +63,7 @@
     </Compile>
     <Compile Include="GUI\GuiAccess.cs" />
     <Compile Include="GUI\IGuiAccess.cs" />
+    <Compile Include="Core\ItemContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server\NetworkIOServer.cs" />
