@@ -16,6 +16,15 @@ namespace Nethack.Core
         private playerType type;
         private Position position;
 
+        public Player(playerType playertype)
+        {
+         this.IP = IP;
+           this.Name = Name;
+            this.Post = new Position(1, 1);
+            this.Type = playertype;
+
+     }
+
         public int HP
         {
             get { return hP; }

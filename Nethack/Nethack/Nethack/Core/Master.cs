@@ -26,20 +26,13 @@ namespace Nethack.Core
         
         public Master(string IP, string Name)
         {
-            Player newplayer = new Player();
-            newplayer.IP = IP;
-            newplayer.Name = Name;
-            newplayer.Post =new  Position(1, 1);
-            newplayer.Type = playerType.player;
-            playerCont.Add(newplayer);
+            
             zombieNum = 12;
-
 
             for (int i = 1; i < zombieNum+1; i++)
             {
-                Player newplayer2 = new Player();
+                Player newplayer2 = new Player(playerType.zombie);
                 newplayer2.IP = "zombie";
-                newplayer2.Type = playerType.zombie;
                 playerCont.Add(newplayer2);
             }
 
@@ -47,10 +40,7 @@ namespace Nethack.Core
         //game, containerPlayer
         public void addPlayer(string IP, string Name)
         {
-            Player newplayer = new Player();
-            newplayer.IP = IP;
-            newplayer.Name = Name;
-            newplayer.Type = playerType.player;
+            Player newplayer = new Player(playerType.player);
             newplayer.Post = new Position(1, playersNum + 1);
             playerCont.Add(newplayer);
             playersNum++;
