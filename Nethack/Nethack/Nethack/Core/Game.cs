@@ -10,6 +10,8 @@ namespace Nethack.Core
     {
         public List<Player> playerContainer;
         public Gameboard gameBoard;
+        //mikro kontener - lista zawierajaca liste graczy - ale tylko id i pozycje, hp, do wysylania
+        //metoda updatu do sieci dla mastera plus tu  byc obserwator dla Joanny 
        // int k;
        public delegate void Del(Position p, int id);
          public event Del DelegatedPos;
