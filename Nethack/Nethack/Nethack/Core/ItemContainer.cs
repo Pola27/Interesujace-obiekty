@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Nethack
 {
-    class ItemContainer // ta klasa chyba nie jest potrzebna 
+    public class ItemContainer // ta klasa chyba nie jest potrzebna 
     {
         private List<Items> itemContainer;
         int weight = 0;
