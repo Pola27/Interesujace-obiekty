@@ -15,7 +15,7 @@ namespace Nethack
 
         public void grabItem(Items i)
         {
-            if (i.Weight + weight < capacity) { itemContainer.Add(i); }
+            if (i.Weight + weight < capacity) { itemContainer.Add(i); } 
             else
             {
                 System.Windows.Forms.MessageBox.Show("You cannot carry any more","Capacity exceeded");
