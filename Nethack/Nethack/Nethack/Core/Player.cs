@@ -10,11 +10,17 @@ namespace Nethack.Core
 
      public class Player
     {
-        private int hP = 100;
+        private int hP = 100, sightRange=2, mana=100,exp=0;
         private string name;
         private string ip;
         private playerType type;
         private Position position;
+        private ItemContainer itemsContainer;
+         // chyba nie powinien byc publiczny, ale nie mam pomysłu na jego metody,
+                                           // get/set chyba nie wystarczy, a dublowanie tych z klasy nie ma sensu
+         //item, FOV, kontener item, mana, exp
+
+
 
         public int HP
         {
@@ -46,5 +52,7 @@ namespace Nethack.Core
             set { position = value; }
         }
 
+
+         //set lub update
     }
 }
